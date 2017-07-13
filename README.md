@@ -1,4 +1,20 @@
-Vitamio
+Android视频播放框架——封装FFMPEG的Vitamio
+
+使用方法：
+下载Vitamio的资源库 vitamio_lib,导入到工程中，使用提供的API.
+在main清单文件中，关联Vitamiao的Activity
+<activity android:name="io.vov.vitamio.activity.InitActivity"></activity>
+    使用API和Android自带的VideoView相同，支持各种协议可以播放网络视频
+    在使用的时候要判断硬件是否支持
+if (!LibsChecker.checkVitamioLibs(this)) {return;}
+		
+		VideoView vv = (VideoView) findViewById(R.id.vv);
+		
+		vv.setVideoPath("sdcard/4.rmvb");
+		vv.start();
+
+在市面中有很多的第三方的控件，例如百度媒体云，github上的FFMPEG等
+
 ===============
 
 Vitamio is an open multimedia framework for Android and iOS, with full and real hardware accelerated decoder and renderer.
